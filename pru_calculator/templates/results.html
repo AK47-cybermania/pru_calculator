@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keputusan PRU</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Keputusan Pilihan Raya</h1>
+    <table>
+        <tr>
+            <th>Negeri</th>
+            <th>Parti</th>
+            <th>Jumlah Undi</th>
+            <th>Kerusi Diperoleh</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{ row.negeri }}</td>
+            <td>{{ row.parti }}</td>
+            <td>{{ row.jumlah_undi }}</td>
+            <td>{{ row.kerusi }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Kembali</a>
+</body>
+</html>
